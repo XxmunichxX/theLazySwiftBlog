@@ -18,12 +18,12 @@ h1 {
 }
 
 h2 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin: 1rem;
 }
 
 p {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     line-height: 1.5;
     max-width: 600px;
 }
@@ -31,6 +31,7 @@ p {
 a {
     color: #FFD700;
     text-decoration: none;
+    font-size: 0.8rem;
     border: 2px solid #FFD700;
     padding: 5px 10px;
     border-radius: 5px;
