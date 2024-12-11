@@ -46,5 +46,6 @@ a:hover {
 footer {
     margin-top: 2rem;
     font-size: 0.7rem;
+    line-height: 1.5;
     color: #808080;
 }
