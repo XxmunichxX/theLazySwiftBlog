@@ -23,7 +23,7 @@ function typeTextWithCursorAndPause(element, text, resolve) {
       index++;
 
       // Check for pause conditions
-      if (char === "," || char === ":") {
+      if (char === "," || char === ":" || char === "!") {
         setTimeout(typeNextCharacter, pauseDuration); // Pause before resuming
       } else {
         setTimeout(typeNextCharacter, typingSpeed); // Continue typing
