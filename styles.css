@@ -1,8 +1,7 @@
-/* Body styling for 16-bit look */
 body {
     background-color: black;
-    color: #00FF00; /* Bright green text */
-    font-family: 'Press Start 2P', monospace; /* 16-bit style font */
+    color: #00ff00; 
+    font-family: 'Press Start 2P', monospace; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,21 +9,22 @@ body {
     text-align: center;
     margin: 0;
     height: 100vh;
+    padding: 30px;
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 1rem;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.5;
     max-width: 600px;
 }
 
 a {
-    color: #FFD700; /* Gold for links */
+    color: #FFD700;
     text-decoration: none;
     border: 2px solid #FFD700;
     padding: 5px 10px;
@@ -39,8 +39,5 @@ a:hover {
 footer {
     margin-top: 2rem;
     font-size: 0.8rem;
-    color: #808080; /* Dim gray for footer */
+    color: #808080;
 }
-
-/* Google Fonts for retro 16-bit style */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
