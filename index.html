@@ -11,9 +11,12 @@
 </head>
 <body>
     <h1>The Lazy Swift Blog</h1>
-    <h2>Embrace the power of laziness!</h2>
+    <h2>The one-page LazyBlog() you didn't know you needed!</h2>
     <p data-typing="true">
         Greetings fellow Swifter! Here's my advice for you: be like <strong>lazy variables</strong> and <strong>lazy views</strong> in the Swift programming language: do the right work, at the right time, only when it's truly needed, in the name of efficiency.
+    </p>
+    <p data-typing="true" class="tip-of-the-day">
+        TIP OF THE DAY FOR THE SAVIOR iOS DEVELOPER: Make sure your app uses the MAIN THREAD only to interact with the user interface. Direct all other operations to a background thread, operation queue, or Grand Central Dispatch queue. Remember that Task {} inherits the priority from its creation context and so, if you are going to use it in the body variable of your SwiftUI View, it will run your code on the main thread automatically. For that reason, to make the “heavy-task” function run on a background thread, make it ASYNC and use AWAIT when calling it or detach the Task from the main thread. 
     </p>
     <a href="mailto:contacts@thelazyswiftblog.com">Contact Me</a>
     <p class="donate-action">Do something cool, do something lazy (you have literally just to tap on a button!)</p>

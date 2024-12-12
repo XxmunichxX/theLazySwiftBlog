@@ -74,6 +74,10 @@ form {
     max-width: 400px;
 }
 
+.tip-of-the-day {
+    text-align: left;
+}
+
 @keyframes blink {
     from, to {
         background-color: transparent;

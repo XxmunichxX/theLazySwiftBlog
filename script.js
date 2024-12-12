@@ -9,6 +9,9 @@ const pauseDuration = 1000; // Pause duration in milliseconds
 function typeTextWithCursorAndPause(element, text, resolve) {
   let index = 0;
 
+  // Make the element visible when typing starts
+  element.style.visibility = "visible";
+
   // Create and append the blinking cursor
   const cursor = document.createElement("span");
   cursor.className = "cursor";
@@ -23,7 +26,7 @@ function typeTextWithCursorAndPause(element, text, resolve) {
       index++;
 
       // Check for pause conditions
-      if (char === "," || char === ":" || char === "!") {
+      if (char === "," || char === ":" || char === "!" || char === ".") {
         setTimeout(typeNextCharacter, pauseDuration); // Pause before resuming
       } else {
         setTimeout(typeNextCharacter, typingSpeed); // Continue typing
@@ -40,6 +43,12 @@ function typeTextWithCursorAndPause(element, text, resolve) {
 
 // Function to handle typing for multiple elements sequentially
 async function startTyping() {
+  // Ensure all elements are hidden initially
+  elementsToType.forEach((element) => {
+    element.style.visibility = "hidden";
+  });
+
+  // Start typing for each element sequentially
   for (const element of elementsToType) {
     const text = element.textContent.trim(); // Get the original text
     await new Promise((resolve) =>
