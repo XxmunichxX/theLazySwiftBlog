@@ -81,6 +81,6 @@ form {
 /* Styles for mobile screens */
 @media (max-width: 600px) {
     a {
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
 }
