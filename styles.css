@@ -20,6 +20,7 @@ h1 {
 h2 {
     font-size: 0.8rem;
     margin: 1rem;
+    line-height: 1.5;
 }
 
 p {
@@ -92,5 +93,9 @@ form {
     a {
         font-size: 0.6rem;
         margin-bottom: 1.5rem;
+    }
+
+    .tip-of-the-day {
+        text-align: left;
     }
 }
