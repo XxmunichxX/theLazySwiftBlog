@@ -76,7 +76,11 @@ form {
 }
 
 .tip-of-the-day {
-    text-align: left;
+    text-align: left !important;
+}
+
+[data-typing="true"] {
+    visibility: hidden;
 }
 
 @keyframes blink {
@@ -96,6 +100,6 @@ form {
     }
 
     .tip-of-the-day {
-        text-align: left;
+        text-align: left !important;
     }
 }
