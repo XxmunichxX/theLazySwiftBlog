@@ -46,7 +46,7 @@ a:hover {
 
 footer {
     margin-top: 2rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     line-height: 1.5;
     color: #808080;
 }
@@ -69,6 +69,11 @@ form {
     vertical-align: bottom;
 }
 
+.donate-action {
+    font-size: 0.5rem;
+    max-width: 400px;
+}
+
 @keyframes blink {
     from, to {
         background-color: transparent;
@@ -79,7 +84,7 @@ form {
 }
 
 /* Styles for mobile screens */
-@media (max-width: 780px) {
+@media (max-width: 768px) {
     a {
         margin-bottom: 1.5rem;
     }
