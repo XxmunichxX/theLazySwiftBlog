@@ -79,8 +79,8 @@ form {
 }
 
 /* Styles for mobile screens */
-@media (max-width: 600px) {
+@media (max-width: 780px) {
     a {
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
     }
 }
