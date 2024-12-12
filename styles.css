@@ -79,10 +79,6 @@ form {
     text-align: left !important;
 }
 
-[data-typing="true"] {
-    visibility: hidden;
-}
-
 @keyframes blink {
     from, to {
         background-color: transparent;
