@@ -77,3 +77,10 @@ form {
         background-color: #00ff00;
     }
 }
+
+/* Styles for mobile screens */
+@media (max-width: 600px) {
+    a {
+        margin-bottom: 1.5rem;
+    }
+}
