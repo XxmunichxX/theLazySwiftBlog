@@ -1,17 +1,15 @@
 body {
-    background-color: black;
-    color: #00ff00; 
-    font-family: 'Press Start 2P', monospace; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    min-height: 100%; 
     margin: 0;
-    min-height: 100vh;
-    overflow-y: auto;
-    padding: 30px env(safe-area-inset-left) 30px env(safe-area-inset-right);
     padding: 30px;
+    background-color: black;
+    color: #00ff00;
+    font-family: 'Press Start 2P', monospace;
+    overflow-y: auto; 
 }
 
 h1 {
@@ -96,10 +94,10 @@ form {
         font-size: 0.6rem;
         margin-bottom: 1.5rem;
     }
+}
 
-    h2 {
-        font-size: 0.8rem;
-        margin: 1rem !important;
-        line-height: 1.5 !important;
+@supports (-webkit-touch-callout: none) {
+    body {
+        min-height: -webkit-fill-available; /* Safari-specific fix for viewport height */
     }
 }
