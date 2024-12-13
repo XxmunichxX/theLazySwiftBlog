@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
     min-height: 100%; 
@@ -27,7 +28,6 @@ p {
     font-size: 0.7rem;
     line-height: 1.5;
     max-width: 600px;
-    text-align: center;
 }
 
 a {
