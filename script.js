@@ -3,7 +3,7 @@ const elementsToType = document.querySelectorAll('[data-typing="true"]');
 
 // Typing settings
 const typingSpeed = 60; // Milliseconds per character
-const pauseDuration = 1000; // Pause duration in milliseconds
+const pauseDuration = 800; // Pause duration in milliseconds
 
 // Function to simulate typing for a single element with pauses
 function typeTextWithCursorAndPause(element, text, resolve) {
