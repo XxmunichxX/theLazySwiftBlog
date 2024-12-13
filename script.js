@@ -4,9 +4,10 @@ const elementsToType = document.querySelectorAll('[data-typing="true"]');
 // Typing settings
 const typingSpeed = 60; // Milliseconds per character
 const pauseDuration = 800; // Pause duration in milliseconds
+const initialBlinkDuration = 1200; // Initial blinking duration for the first word (1 second)
 
 // Function to simulate typing for a single element with pauses
-function typeTextWithCursorAndPause(element, text, resolve) {
+function typeTextWithCursorAndPause(element, text, resolve, isFirst = false) {
   let index = 0;
 
   // Make the element visible when typing starts
@@ -18,27 +19,35 @@ function typeTextWithCursorAndPause(element, text, resolve) {
   element.innerHTML = ""; // Clear the text
   element.appendChild(cursor);
 
-  // Typing interval with pauses
-  const typeNextCharacter = () => {
-    if (index < text.length) {
-      const char = text[index];
-      cursor.insertAdjacentText("beforebegin", char); // Add the next character
-      index++;
+  const startTyping = () => {
+    // Typing interval with pauses
+    const typeNextCharacter = () => {
+      if (index < text.length) {
+        const char = text[index];
+        cursor.insertAdjacentText("beforebegin", char); // Add the next character
+        index++;
 
-      // Check for pause conditions
-      if (char === "," || char === ":" || char === "!" || char === ".") {
-        setTimeout(typeNextCharacter, pauseDuration); // Pause before resuming
+        // Check for pause conditions
+        if (char === "," || char === ":" || char === "!" || char === ".") {
+          setTimeout(typeNextCharacter, pauseDuration); // Pause before resuming
+        } else {
+          setTimeout(typeNextCharacter, typingSpeed); // Continue typing
+        }
       } else {
-        setTimeout(typeNextCharacter, typingSpeed); // Continue typing
+        element.removeChild(cursor); // Remove the cursor after typing
+        resolve(); // Resolve the promise when done
       }
-    } else {
-      element.removeChild(cursor); // Remove the cursor after typing
-      resolve(); // Resolve the promise when done
-    }
+    };
+
+    typeNextCharacter();
   };
 
-  // Start typing
-  typeNextCharacter();
+  // If it's the first element, blink the cursor for the initial duration
+  if (isFirst) {
+    setTimeout(startTyping, initialBlinkDuration);
+  } else {
+    startTyping();
+  }
 }
 
 // Function to handle typing for multiple elements sequentially
@@ -49,10 +58,10 @@ async function startTyping() {
   });
 
   // Start typing for each element sequentially
-  for (const element of elementsToType) {
+  for (const [index, element] of elementsToType.entries()) {
     const text = element.textContent.trim(); // Get the original text
     await new Promise((resolve) =>
-      typeTextWithCursorAndPause(element, text, resolve)
+      typeTextWithCursorAndPause(element, text, resolve, index === 0)
     );
   }
 }
