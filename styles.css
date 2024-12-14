@@ -13,6 +13,20 @@ body {
     overflow-y: auto; 
 }
 
+.bottom-div {
+    position: fixed; /* Keeps the div at the bottom of the viewport */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Align to the left edge */
+    width: 100%; /* Take the full width of the viewport */
+    background-color: black; /* Match the body background */
+    text-align: center; /* Center-align the text horizontally */
+    display: flex; /* Enable flexbox for alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically within the div */
+    margin-top: 5rem;
+}
+
 h1 {
     font-size: 2.5rem;
     margin: 1rem;
@@ -100,7 +114,11 @@ form {
 @media (max-width: 768px) {
     a {
         font-size: 0.6rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.3rem;
+    }
+
+    .upper {
+        margin-bottom: 10rem;
     }
 }
 
