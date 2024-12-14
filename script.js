@@ -2,7 +2,7 @@
 const elementsToType = document.querySelectorAll('[data-typing="true"]');
 
 // Typing settings
-const typingSpeed = 60; // Milliseconds per character
+const typingSpeed = 50; // Milliseconds per character
 const pauseDuration = 800; // Pause duration in milliseconds
 const initialBlinkDuration = 1200; // Initial blinking duration for the first word (1 second)
 
