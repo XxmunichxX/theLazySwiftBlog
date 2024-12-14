@@ -19,6 +19,18 @@ function typeTextWithCursorAndPause(element, text, resolve, isFirst = false) {
   element.innerHTML = ""; // Clear the text
   element.appendChild(cursor);
 
+  // Measure the full text length and calculate its height (before typing)
+  const tempSpan = document.createElement("span");
+  tempSpan.style.fontFamily = "Press Start 2P, monospace"; // Apply the same font as the original element
+  tempSpan.style.visibility = "hidden"; // Hide the temporary element
+  tempSpan.innerHTML = text; // Set the full text to measure
+  document.body.appendChild(tempSpan); // Append to the body to get accurate measurements
+  const fullTextHeight = tempSpan.offsetHeight;
+  document.body.removeChild(tempSpan); // Remove the temporary element after measuring
+
+  // Set a fixed min-height for the element to reserve space for the full text
+  element.style.minHeight = `${fullTextHeight}px`;
+
   const startTyping = () => {
     // Typing interval with pauses
     const typeNextCharacter = () => {
