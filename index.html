@@ -30,7 +30,7 @@
     </p>
     <h2 data-typing="true">TIP OF THE DAY FOR THE SAVIOR iOS DEVELOPER:</h2>
     <p data-typing="true" class="tip-of-the-day">
-        In the iOS app lifecycle, an app enters the inactive state when it is in the foreground but unable to receive user events. This typically occurs due to interruptions like an incoming call, a system alert, or during transitions between states (e.g., moving to or from the background). While inactive, the app is temporarily paused but remains in the foreground, neither fully suspended nor in the background.
+        Make sure your app uses the MAIN THREAD only to interact with the user interface. Direct all other operations to a background thread, operation queue, or Grand Central Dispatch queue. Remember that Task {} inherits the priority from its creation context and so, if you are going to use it in the body variable of your SwiftUI View, it will run your code on the main thread automatically. For that reason, to make the “heavy-task” function run on a background thread, make it ASYNC and use AWAIT when calling it or detach the Task from the main thread. Go in peace now, spread the word.
     </p>
     <a href="mailto:contacts@thelazyswiftblog.com">Contact Me</a>
     <p class="donate-action">Be a better person starting from today. Donate, incentive laziness. Thank you!</p>
